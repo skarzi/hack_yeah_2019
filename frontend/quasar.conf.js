@@ -97,13 +97,13 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'frontend',
-        // short_name: 'frontend',
+        name: 'Cigarette Butt Recycle',
+        short_name: 'Cigarette Recycle',
         // description: 'Project made on Hack Yeah 2019',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
-        theme_color: '#027be3',
+        theme_color: '#878787',
         icons: [
           {
             'src': 'statics/icons/icon-128x128.png',

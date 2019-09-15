@@ -3,6 +3,9 @@
     bordered
     separator
   >
+      <q-item-label header>
+        Last {{ events.length }} events
+      </q-item-label>
       <q-item
         v-for="event in events"
         :key="event.id"

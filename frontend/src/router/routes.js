@@ -8,6 +8,10 @@ const routes = [
       {
         path: '/qr-code-scanner',
         component: () => import('pages/QRCodeScanner.vue')
+      },
+      {
+        path: '/cigarette-butts-detector',
+        component: () => import('pages/CigaretteButtsDetector.vue')
       }
     ]
   }

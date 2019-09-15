@@ -1,17 +1,22 @@
 <template>
   <q-page class="flex flex-center">
-  <qrcode-stream
-    camera="auto"
-    @decode="onDecode"
-    @init="onInit"
-  >
-    </qrcode-stream>
+    <q-header elevated>
+      <q-toolbar>
+        <q-toolbar-title>
+          Scan QR code
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
+    <qrcode-stream
+      camera="auto"
+      @decode="onDecode"
+      @init="onInit"
+    >
+      </qrcode-stream>
   </q-page>
 </template>
 
 <style lang="stylus" scoped>
-.q-toolbar
-  display: none !important
 </style>
 
 <script>
@@ -38,7 +43,6 @@ export default {
       try {
         await promise
         // successfully initialized
-        this.$q.fullscreen.request()
       } catch (error) {
         console.log(`QR code scanner init error: ${error.name}`)
       } finally {
@@ -46,10 +50,9 @@ export default {
       }
     },
     onDecode (decodedString) {
-      if (decodedString) {
-        alert(decodedString)
-        this.$q.fullscreen.exit()
-        this.createEvent(Math.floor(Math.random() * 10) + 1)
+      let cigaretteButtsNumber = parseInt(decodedString)
+      if (cigaretteButtsNumber) {
+        this.createEvent(cigaretteButtsNumber)
         this.$router.push('/')
       }
     },

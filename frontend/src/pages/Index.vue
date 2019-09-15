@@ -1,18 +1,19 @@
 <template>
   <q-page class="flex justify-center items-start">
+    <q-header elevated>
+      <q-toolbar>
+        <q-toolbar-title>
+          Hello {{ username }}
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
     <div class="row full-width q-px-md">
       <div class="col-xs-12">
-        <div class="row items-center">
-          <div class="text-left col-xs-10">
-            <h5>
-              Collected cigarette butts amount:
-            </h5>
-          </div>
-          <div class="col-xs-1">
-            <h4>
-              {{ totalCigaretteButtsNumber }}
-            </h4>
-          </div>
+        <div class="text-h5 q-my-md">
+          Collected cigarette's butts:
+        </div>
+        <div class="text-bold text-h4 q-pb-lg">
+          {{ totalCigaretteButtsNumber }}
         </div>
       </div>
       <div class="col-xs-12">
@@ -54,6 +55,7 @@ export default {
     }
   },
   computed: {
+    ...userProfileNamespace.mapState(['username']),
     ...userProfileNamespace.mapGetters(['totalCigaretteButtsNumber'])
   }
 }

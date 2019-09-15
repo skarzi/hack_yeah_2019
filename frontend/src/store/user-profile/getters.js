@@ -1,5 +1,5 @@
 export function events (state) {
-  return state.events.slice(0, 5)
+  return state.events.slice(0, 10)
 }
 
 export function totalCigaretteButtsNumber (state) {
